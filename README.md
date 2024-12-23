@@ -4,7 +4,7 @@ This is a Magento 2 module. This module can be used to show page title related v
 
 ## Compatibility
 This module is tested and working with
-* Magento 2.4.6 and above
+* Magento 2.4.6 and above (*should work upto 2.4.4 with php 8.0*)
 * PHP 8.1 and above
 
 ## Installation
