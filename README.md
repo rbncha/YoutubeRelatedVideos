@@ -1,4 +1,4 @@
-# Magento 2 Youtube Related Videos 
+# Magento 2 Youtube Related Videos via Youtube API 
 
 This is a Magento 2 module. This module can be used to show page title related videos from Youtube between page content and footer section. I have also implemented magento cache to avoid frequent Youtube API query. It stores page wise related Youtube videos in cache until the Magento cache is not cleared. There is a cache timeout which can be configured in admin section in seconds. 
 
