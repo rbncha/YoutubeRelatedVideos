@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rbncha_tab" translate="label" sortOrder="25">
+            <label>Rbncha</label>
+        </tab>
+        <section id="rbncha_youtube" sortOrder="20" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Youtube API</label>
+            <tab>rbncha_tab</tab>
+            <resource>Magento_Backend::admin</resource>
+             <group id="youtube" sortOrder="10" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Youtube API</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <comment>Please enter your Youtube API key</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="max_result" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum Result</label>
+                    <comment>Please enter maximum number of youtube videos you want to show</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="cache_lifetime" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum Cache Time</label>
+                    <comment>Please enter maximum cache time in seconds</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

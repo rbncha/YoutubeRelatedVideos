@@ -1,0 +1,46 @@
+<?php //$relatedVideos = $this->getRelatedVideos('0kgGZGAchko') ?>
+<?php //$relatedVideos = $this->getPopularVideos('NP') ?>
+<?php $title = $block->getLayout()->getBlock('page.main.title')->getPageTitle(); if(empty($title)) $title = 'Most recent clothing event around the world'?>
+<?php $relatedVideos = $this->getSearchVideos($title) ?>
+
+<?php if(!empty($relatedVideos)):?>
+    <div class="related-videos">
+        <h3>Related Videos</h3>
+        <div>
+        <?php foreach ($relatedVideos as $video): ?>
+            <?php $id = is_array($video['id']) && isset($video['id']['videoId']) ? $video['id']['videoId'] : $video['id']?>
+            <div>
+                <a href="https://www.youtube.com/watch?v=<?php echo $id ?>" target="_blank">
+                    <img width="150" src="<?php echo $video['snippet']['thumbnails']['medium']['url']; ?>" alt="<?php echo $video['snippet']['title']; ?>">
+                    <span><?php echo $video['snippet']['title']; ?></span>
+                </a>
+            </div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+<?php else: ?>
+    <p>No related videos found.</p>
+<?php endif?>
+
+<style>
+    .related-videos{
+        text-align: center;
+        display: table;
+        width: 64%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom:20px;
+    }
+    .related-videos div div{
+        width: 250px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
+        float:left;
+        margin:0 0 5px 5px;
+        height:210px;
+        padding:3px;
+    }
+    .related-videos div div img{
+        width:230px;
+    }
+</style>
