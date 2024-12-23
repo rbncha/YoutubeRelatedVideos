@@ -1,6 +1,11 @@
-# YoutubeRelatedVideos
+# Magento 2 Youtube Related Videos 
 
-This module can be used to show page title related videos from Youtube between page content and footer section.
+This is a Magento 2 module. This module can be used to show page title related videos from Youtube between page content and footer section.
+
+## Compatibility
+This module is tested and working with
+* Magento 2.4.6 and above
+* PHP 8.1 and above
 
 ## Installation
 Installation is pretty simple. Copy the Rbncha_Main module inside code/ directory of your Magento installation. Run enable module command
